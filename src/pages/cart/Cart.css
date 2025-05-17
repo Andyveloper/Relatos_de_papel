@@ -1,0 +1,17 @@
+.title {
+    padding: 24px;
+}
+
+.total-price {
+    width: 80%;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: end;
+    margin: 24px 0px;
+}
+
+.total-price__total {
+    display: inline-block;
+    margin: 0px 20px ;
+}
+
