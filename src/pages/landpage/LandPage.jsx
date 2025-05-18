@@ -3,7 +3,7 @@ import { useEffect,useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function LandPage() {
-const [contador, setContador] = useState(10)
+const [contador, setContador] = useState(5)
 const navigate = useNavigate();  // <-- Definir navigate
 
 
@@ -22,9 +22,9 @@ return (
     <div>
         <header className="landing-header">
           <h1>📚 Relatos de Papel</h1>
-          <p>Explora cientos de libros digitales</p>
+          <p>Explora cientos de libros como si estuvieras en tu tienda favorita</p>
         </header>            
-        <div className="hero">
+        <div className="landing-img">
             <p>Serás redirigido automáticamente en {contador} segundos...</p>          
         </div>          
     </div>

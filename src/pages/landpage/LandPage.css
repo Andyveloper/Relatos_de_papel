@@ -8,7 +8,7 @@
       height: 100%;
     }
 
-.hero {
+.landing-img {
   background-image: url("/ImagenLanding.jpg");
   background-size: cover;
   background-position: center;
