@@ -1,0 +1,47 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+.hero {
+  background-image: url("/ImagenLanding.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;     /* Mueve el contenido hacia abajo */
+  justify-content: center;   /* Centra el texto horizontalmente */
+  padding-bottom: 20px;      /* Espacio desde abajo */
+  color: white;
+  font-size: 1rem;           /* Texto más pequeño */
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Hace que el texto se vea mejor sobre la imagen */
+}
+
+  .landing-header {
+  height: 30vh; /* Pantalla completa */
+  background-color: #2d3142; /* Fondo oscuro profesional */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.landing-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}

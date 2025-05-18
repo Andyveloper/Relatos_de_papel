@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router'
 import Home from '@src/pages/home//Home'
 import RootLayout from './RootLayout'
+import LandPage from '@src/pages/landpage/LandPage'
 
 const routes = [
   {
@@ -10,6 +11,10 @@ const routes = [
       {
         path: '/home',
         element: <Home />,
+      },
+     {
+        path: '/',
+        element: <LandPage />,
       }
     ],
   },
