@@ -1,32 +1,29 @@
-* {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-    }
-
 .landing-img {
-  background-image: url("/ImagenLanding.jpg");
+  background-image: url('/ImagenLanding.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 70vh;
   width: 100%;
   display: flex;
-  align-items: flex-end;     /* Mueve el contenido hacia abajo */
-  justify-content: center;   /* Centra el texto horizontalmente */
-  padding-bottom: 20px;      /* Espacio desde abajo */
+  align-items: flex-end;
+  /* Mueve el contenido hacia abajo */
+  justify-content: center;
+  /* Centra el texto horizontalmente */
+  padding-bottom: 20px;
+  /* Espacio desde abajo */
   color: white;
-  font-size: 1rem;           /* Texto más pequeño */
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Hace que el texto se vea mejor sobre la imagen */
+  font-size: 1rem;
+  /* Texto más pequeño */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  /* Hace que el texto se vea mejor sobre la imagen */
 }
 
-  .landing-header {
-  height: 30vh; /* Pantalla completa */
-  background-color: #2d3142; /* Fondo oscuro profesional */
+.landing-header {
+  height: 30vh;
+  /* Pantalla completa */
+  background-color: #2d3142;
+  /* Fondo oscuro profesional */
   color: white;
   display: flex;
   flex-direction: column;
