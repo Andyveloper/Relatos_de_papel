@@ -3,7 +3,7 @@ import { Button } from '../ui/button';
 import './styles.css';
 import { useContext } from 'react';
 
-export function CartRow( {book}){
+export function CartRow({book}){
 
     const { updateBooks } = useContext(CartContext);
 
@@ -21,6 +21,7 @@ const removeBook = () => {
 
 return (
         <div className="cart-row__container">
+            <img  className="info__container__image" src={`https://covers.openlibrary.org/b/olid/${book.coverEdition}-L.jpg`} alt={book.title} />
             <div className="info__container">
                 <div className="info__container__description">{book.title}</div>
                 <div className="info__container__remove">

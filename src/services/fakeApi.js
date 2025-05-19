@@ -1,3 +1,6 @@
+// Para la imagen del cover, colocar el siguiente código en el componente
+// <img src={`https://covers.openlibrary.org/b/olid/{cover_edition_key}-L.jpg`} alt={title} />
+
 export const fakeApi = {
   "numFound": 10689839,
   "start": 0,
@@ -7060,5 +7063,4 @@ export const fakeApi = {
   ]
 }
 
-// Para la imagen del cover, colocar el siguiente código en el componente
-// <img src={`https://covers.openlibrary.org/b/olid/{cover_edition_key}-L.jpg`} alt={title} />
+
