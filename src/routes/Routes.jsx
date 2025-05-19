@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router'
 import Home from '@src/pages/home//Home'
-import BookDetail from '@src/pages/bookdetail/BookDetail'
+import BookDetail from '@src/pages/bookDetail/BookDetail'
 import RootLayout from './RootLayout'
 import LandPage from '@src/pages/landpage/LandPage'
 
@@ -20,7 +20,7 @@ const routes = [
       {
         path: '/',
         element: <LandPage />,
-      }
+      },
     ],
   },
 ]
