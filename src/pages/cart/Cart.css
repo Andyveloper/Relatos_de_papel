@@ -1,0 +1,28 @@
+.title {
+    padding: 24px;
+}
+
+.total-price {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: end;
+    margin: 24px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 90px;
+}
+
+.total-price__total {
+    display: inline-block;
+    margin: 8px 20px ;
+    justify-content: space-between;
+    height: 100px;
+}
+
+.checkout-button {
+    width: 100%;
+    margin: 0 auto;
+}
+
