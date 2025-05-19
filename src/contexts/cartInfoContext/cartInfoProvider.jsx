@@ -8,6 +8,8 @@ export const CartInfoProvider = ({ children }) => {
     const exists = booksInfo.some(el => el.title === book.title);
     if (!exists) {
       setBooksInfo(prev => [...prev, { ...book }]);
+    } else if(book.count > 1){
+      addMore(book);
     } else {
       addOne(book);
     }
@@ -17,6 +19,23 @@ export const CartInfoProvider = ({ children }) => {
     const updated = booksInfo.map(bookInfo => {
       if (bookInfo.title === book.title) {
         return { ...bookInfo, count: bookInfo.count + 1 };
+      }
+      return bookInfo;
+    });
+
+    setBooksInfo(updated);
+  };
+
+    const addMore = (book) => {
+    const updated = booksInfo.map(bookInfo => {
+       if (bookInfo.title === book.title) {
+        bookInfo =  { 
+          title: bookInfo.title,
+          count: bookInfo.count + book.count,
+          coverEdition: bookInfo.coverEdition,
+          price: bookInfo.price
+        };
+        return bookInfo;
       }
       return bookInfo;
     });

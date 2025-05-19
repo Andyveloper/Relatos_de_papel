@@ -21,8 +21,6 @@ const BookDetail = () => {
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
   const addToCart = () => {
-    console.log(book);
-    console.log(quantity);
     updateBooks('add', {
       title: book.title,
       count: quantity,

@@ -23,7 +23,6 @@ const Cart = () => {
                    <Link to={`/checkout`}>Pagar</Link>
                 </Button>
             </div>
-
         </div>
     )
 }
