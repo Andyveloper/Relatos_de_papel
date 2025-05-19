@@ -18,11 +18,11 @@ function LandPage() {
 
   return (
     <div>
-      <header className="landing-header">
-        <h1 className="landing-header">📚 Relatos de Papel</h1>
+      <header className="landing__header">
+        <h1 className="landing__header">📚 Relatos de Papel</h1>
         <p>Explora cientos de libros como si estuvieras en tu tienda favorita</p>
       </header>
-      <div className="landing-img">
+      <div className="landing__img">
         <p>Serás redirigido automáticamente en {contador} segundos...</p>
       </div>
     </div>
