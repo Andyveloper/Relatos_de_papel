@@ -27,7 +27,7 @@ const BookDetail = () => {
       title: book.title,
       count: quantity,
       coverEdition: book.cover_edition_key,
-      price: 75000
+      price: book.price
     })
   }
 
@@ -52,7 +52,7 @@ const BookDetail = () => {
         <p className="description">{book.description}</p>
 
         <div className="price">
-          <strong>${Math.floor(Math.random() * 100000).toLocaleString()} </strong>
+          <strong>${book.price} </strong>
         </div>
 
         <div className="quantity-selector">
