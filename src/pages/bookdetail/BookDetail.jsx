@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import '@src/styles/BookDetail.css';
 import { fakeApi } from '@src/services/fakeApi';
+import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
 
 const BookDetail = () => {
 
@@ -10,6 +11,7 @@ const BookDetail = () => {
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const { updateBooks } = useContext(CartInfoContext);
 
   useEffect(() => {
     const bookId = allBooks.find((b) => b.cover_i === parseInt(id));
@@ -18,6 +20,16 @@ const BookDetail = () => {
 
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+  const addToCart = () => {
+    console.log(book);
+    console.log(quantity);
+    updateBooks('add', {
+      title: book.title,
+      count: quantity,
+      coverEdition: book.cover_edition_key,
+      price: 75000
+    })
+  }
 
   if (!book) return <p>Libro no encontrado</p>;
 
@@ -49,7 +61,7 @@ const BookDetail = () => {
           <button onClick={increment}>+</button>
         </div>
 
-        <button className="add-to-cart">Añadir al carrito</button>
+        <button onClick={() => { addToCart() }} className="add-to-cart">Añadir al carrito</button>
       </div>
     </div>
   );

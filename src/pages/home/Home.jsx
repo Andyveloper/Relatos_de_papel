@@ -57,7 +57,7 @@ const Home = () => {
                   </CardContent>
                   <CardFooter>
                     <Button variant={'outline'} asChild title="Ir al link externo">
-                      <Link target="_blank" rel="noopener noreferrer" to={`${result.externalUrl}`}>
+                      <Link target="_blank" rel="noopener noreferrer" to={`/book/${result.cover_i}`}>
                         Ir a detalles
                       </Link>
                     </Button>

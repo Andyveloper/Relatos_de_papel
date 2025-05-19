@@ -1,22 +1,22 @@
-import { CartContext } from '@src/contexts/cartContext/cartContext';
 import { Button } from '../ui/button';
 import './styles.css';
 import { useContext } from 'react';
+import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
 
 export function CartRow({book}){
 
-    const { updateBooks } = useContext(CartContext);
+    const { updateBooks } = useContext(CartInfoContext);
 
-const add = () => {
-    updateBooks('add', book)
-}
+const addOne = () => {
+   updateBooks('addOne', book)
+ }
 
 const removeOne = () => {
-    updateBooks('removeOne', book)
+     updateBooks('removeOne', book)
 }
 
-const removeBook = () => {
-    updateBooks('remove', book)
+const remove = () => {
+  updateBooks('remove', book)
 }
 
 return (
@@ -25,7 +25,7 @@ return (
             <div className="info__container">
                 <div className="info__container__description">{book.title}</div>
                 <div className="info__container__remove">
-                <Button onClick={removeBook(book)} asChild variant={'outline'}>
+                <Button onClick={() => remove()} asChild variant={'outline'}>
                   <p>Eliminar</p>
                 </Button>
                 </div>
@@ -34,12 +34,12 @@ return (
                 <div className="info__container__cuantity">Cantidad: {book.count}</div>
                 <div className="info__container__buttons">
                     <div className="info__container__buttons__button">
-                    <Button asChild variant={'outline'}>
-                  <p onClick={add(book)}>+</p>
+                    <Button onClick={() => addOne()} asChild variant={'outline'}>
+                  <p>+</p>
                 </Button>
                     </div>
-                    <div className="info__container__buttons__button"><Button asChild variant={'outline'}>
-                  <p onClick={removeOne(book)}>-</p>
+                    <div className="info__container__buttons__button"><Button onClick={() => removeOne()} asChild variant={'outline'}>
+                  <p>-</p>
                 </Button></div>
                 </div>
             </div>
