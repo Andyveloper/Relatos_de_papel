@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { mockBooks } from '@src/services/mockBooks';
 import '@src/styles/BookDetail.css';
+import { fakeApi } from '@src/services/fakeApi';
 
 const BookDetail = () => {
-  const { id } = useParams(); 
+
+  const allBooks = fakeApi.docs
+
+  const { id } = useParams();
   const [book, setBook] = useState(null);
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    const bookId = mockBooks.find((b) => b.id === parseInt(id));
+    const bookId = allBooks.find((b) => b.cover_i === parseInt(id));
     setBook(bookId);
-  }, [id]);
+  }, [id, allBooks]);
 
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
@@ -21,17 +24,23 @@ const BookDetail = () => {
   return (
     <div className="book-detail-container">
       <div className="image-section">
-        <img src={book.image} alt={book.title} />
+        <img
+          src={`https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-L.jpg`}
+          alt={book.title}
+          className="py-3 "
+        />
       </div>
       <div className="info-section">
-        <h3 className="genre">{book.genre}</h3>
-        <h1>{book.title}</h1>
-        <p className="author"><em>Autor: {book.author}</em></p>
-        <p className="release"><em>Fecha de lanzamiento: {book.release_date}</em></p>
+        <h3 className="genre">Disponible en:
+          <span>{' '}{book.language.join(', ').toUpperCase()}.</span>
+        </h3>
+        <h1>{book.title.toUpperCase()}</h1>
+        <p className="author"><em>Autor: {book.author_name}</em></p>
+        <p className="release"><em>Fecha de lanzamiento: {book.first_publish_year}</em></p>
         <p className="description">{book.description}</p>
 
         <div className="price">
-          <strong>${book.currency} {book.price.toLocaleString()}</strong>
+          <strong>${Math.floor(Math.random() * 100000).toLocaleString()} </strong>
         </div>
 
         <div className="quantity-selector">
