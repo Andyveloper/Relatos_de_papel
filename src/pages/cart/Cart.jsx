@@ -13,13 +13,14 @@ const Cart = () => {
     return books.reduce( (acc, books) => books.price * books.count + acc , 0);
 }
 
+
     return (
         <div className="pt-25 h-screen">
             <h1 className='text-4xl font-semibold title'>{CartConfig.labels.title}</h1>
             {context.booksInfo.map(book => <CartRow  book={book}/>)}
             <div className="total-price">
                 <h2 className='total-price__title'>Total: ${getTotalPrice(booksInfo)}</h2>
-                <Button onClick={() => buy()} asChild variant={'default'} size={'lg'}>
+                <Button asChild variant={'default'} size={'lg'}>
                    <Link to={`/checkout`}>Pagar</Link>
                 </Button>
             </div>

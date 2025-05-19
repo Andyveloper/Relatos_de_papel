@@ -72,6 +72,10 @@ export const CartInfoProvider = ({ children }) => {
 
   }
 
+  const clearCart = () => {
+    setBooksInfo([]);
+  }
+
   const updateBooks = (action, book) => {
 
     switch (action) {
@@ -87,6 +91,8 @@ export const CartInfoProvider = ({ children }) => {
       case 'remove':
         remove(book);
         break;
+      case 'clearCart':
+        clearCart();
     }
   };
 
