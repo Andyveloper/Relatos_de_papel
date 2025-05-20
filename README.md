@@ -28,11 +28,11 @@
 
 Grupo 1
 
-- GitHub: Andres Mauricio Cantillo Moreno[@Andyveloper](https://github.com/Andyveloper)
+- GitHub: Andres Mauricio Cantillo Moreno [@Andyveloper](https://github.com/Andyveloper)
 - GitHub: Evelyn Tabares [@EvelynTabaresV](https://github.com/EvelynTabaresV)
 - GitHub: Dany Martinez [@martinezDany](https://github.com/martinezDany)
 - GitHub: Sandra Milena Garcia Diaz [@SandraGarcia23](https://github.com/SandraGarcia23)
-- GitHub: Sebastian Alvarez[@sebas199801](https://github.com/sebas199801)
+- GitHub: Sebastian Alvarez [@sebas199801](https://github.com/sebas199801)
 
 
 ## 🤝 Contributing
