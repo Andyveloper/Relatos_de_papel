@@ -47,3 +47,22 @@ margin: 4px 10px;
     width: 90px;
     margin: 0 auto;
 }
+
+.not-books{
+    width: 80%;
+    margin: 0 auto;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.not-books__title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.not-books__subtitle {
+    font-size: 18px;
+}
