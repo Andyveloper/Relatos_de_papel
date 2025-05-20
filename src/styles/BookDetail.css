@@ -95,3 +95,22 @@
 .book-detail__add-to-cart:hover {
   background-color: #029e82;
 }
+
+
+#check{
+  display: flex;
+  justify-content: center;
+  color:#A1C879;
+}
+
+.checkout-summary__dialog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem;
+}
+
+#value{
+  color: #03A58F;
+  font-weight: bold;
+}
