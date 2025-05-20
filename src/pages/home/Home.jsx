@@ -1,29 +1,13 @@
 import { Button } from '@src/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader } from '@src/components/ui/card'
 import { Input } from '@src/components/ui/input'
-import { fakeApi } from '@src/services/fakeApi'
-import { useCallback } from 'react'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import useSearchBooks from '@src/hooks/useSearchBooks'
+
 import { Link } from 'react-router'
 
 const Home = () => {
-  const [searchInput, setSearchInput] = useState('')
-  const [searchResults, setSearchResults] = useState(fakeApi.docs)
 
-  // Data original
-  const allBooks = fakeApi.docs
-
-  const handleSearch = useCallback(() => {
-    const newResults = allBooks.filter((result) =>
-      result.title.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())
-    )
-    setSearchResults(newResults)
-  }, [searchInput, allBooks])
-
-  useEffect(() => {
-    handleSearch()
-  }, [searchInput, handleSearch])
+  const { searchInput, searchResults, setSearchInput } = useSearchBooks()
 
   return (
     <section className="py-25">
