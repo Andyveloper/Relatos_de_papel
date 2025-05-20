@@ -5,6 +5,7 @@ import { Button } from '@src/components/ui/button';
 import { Link } from 'react-router';
 import { useContext } from 'react';
 import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
+import { NotBooks } from '@src/components/cartComponents/not-books';
 
 const Cart = () => {
     const context = useContext(CartInfoContext);
@@ -13,10 +14,9 @@ const Cart = () => {
     return books.reduce( (acc, books) => books.price * books.count + acc , 0);
 }
 
-
-    return (
-        <div className="pt-25 h-screen">
-            <h1 className='text-4xl font-semibold title'>{CartConfig.labels.title}</h1>
+const infoWithBooks = () => {
+    return ( <>
+     <h1 className='text-4xl font-semibold title'>{CartConfig.labels.title}</h1>
             {context.booksInfo.map(book => <CartRow  book={book}/>)}
             <div className="total-price">
                 <h2 className='total-price__title'>Total: ${getTotalPrice(booksInfo)}</h2>
@@ -24,6 +24,20 @@ const Cart = () => {
                    <Link to={`/checkout`}>Pagar</Link>
                 </Button>
             </div>
+    </>
+    )
+}
+
+const infoWithoutBooks = () => {
+    return ( <>
+        <NotBooks></NotBooks>
+    </>
+    )
+}
+
+    return (
+        <div className="pt-25 h-screen">
+            {booksInfo.length !== 0 ? infoWithBooks() : infoWithoutBooks() }
         </div>
     )
 }

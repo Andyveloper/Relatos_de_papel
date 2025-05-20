@@ -8,9 +8,9 @@ import { CartInfoProvider } from './contexts/cartInfoContext/cartInfoProvider'
 createRoot(document.getElementById('root')).render(
 
   
-  <StrictMode>
+
     <CartInfoProvider>
       <RouterProvider router={router} />
     </CartInfoProvider>
-  </StrictMode>
+
 )
