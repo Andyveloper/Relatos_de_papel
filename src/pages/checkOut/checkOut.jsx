@@ -18,7 +18,7 @@ import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
 
 const CheckOut= () => {
   const context = useContext(CartInfoContext);
-  const {booksInfo} = context;
+  const {booksInfo, updateBooks} = context;
   const envio = 5.50;
   const descuento = 0.00; // Reservado para futuro uso
 
@@ -31,7 +31,7 @@ const CheckOut= () => {
   const navigate = useNavigate();
 
   const handlePago = () => {
-    // vaciarCarrito();
+    updateBooks('clearCart');
     navigate('/home');
   };
 
