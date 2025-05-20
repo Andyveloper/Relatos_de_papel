@@ -1,9 +1,9 @@
-.book-detail-container {
+.book-detail {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 6rem 0 0 0;
-  padding: 0rem 10% 0 10%;
+  padding: 0 10%;
   width: 100%;
   gap: 4rem;
   background-color: #fffdf5;
@@ -12,14 +12,14 @@
   height: calc(100vh - 12rem);
 }
 
-.image-section img {
+.book-detail__image {
   max-width: 25rem;
   height: auto;
   border-radius: 0.75rem;
   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.2);
 }
 
-.info-section {
+.book-detail__info {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -27,39 +27,39 @@
   gap: 1rem;
 }
 
-.genre {
+.book-detail__genre {
   color: #03a58f;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-h1 {
+.book-detail__title {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0.5rem 0;
 }
 
-.author,
-.release {
+.book-detail__author,
+.book-detail__release {
   font-size: 1rem;
   color: #333;
   margin: 0.3rem 0;
 }
 
-.description {
+.book-detail__description {
   margin: 1rem 0;
   line-height: 1.6;
 }
 
-.quantity-selector {
+.book-detail__quantity {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   margin: 1rem 0;
 }
 
-.quantity-selector button {
+.book-detail__quantity-button {
   background-color: #a1c879;
   border: none;
   padding: 0.5rem 1rem;
@@ -70,17 +70,17 @@ h1 {
   border-radius: 0.375rem;
 }
 
-.quantity-selector span {
+.book-detail__quantity-value {
   font-size: 1.2rem;
 }
 
-.price {
+.book-detail__price {
   font-size: 1.4rem;
   margin: 1rem 0;
   color: #0b0f13;
 }
 
-.add-to-cart {
+.book-detail__add-to-cart {
   background-color: #03a58f;
   color: white;
   border: none;
@@ -92,6 +92,25 @@ h1 {
   transition: background 0.3s;
 }
 
-.add-to-cart:hover {
+.book-detail__add-to-cart:hover {
   background-color: #029e82;
+}
+
+
+#check{
+  display: flex;
+  justify-content: center;
+  color:#A1C879;
+}
+
+.checkout-summary__dialog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem;
+}
+
+#value{
+  color: #03A58F;
+  font-weight: bold;
 }

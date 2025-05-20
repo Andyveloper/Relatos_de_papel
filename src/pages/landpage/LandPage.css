@@ -16,7 +16,9 @@
 
 .landing__header {
   height: 30vh;
-  background-color: #2d3142;
+  /* Pantalla completa */
+  background-color: #03a58f;
+  /* Fondo oscuro profesional */
   color: white;
   display: flex;
   flex-direction: column;
