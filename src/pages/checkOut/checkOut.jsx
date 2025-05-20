@@ -13,13 +13,17 @@ import '@src/styles/checkout.css';
 import { PurchaseTable } from '@src/components/checkOut/purchaseTable';
 import { Button } from '@src/components/ui/button'
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
 
-function CheckOut({ carrito }) {
+const CheckOut= () => {
+  const context = useContext(CartInfoContext);
+  const {booksInfo} = context;
   const envio = 5.50;
   const descuento = 0.00; // Reservado para futuro uso
 
   const calcularSubtotal = () =>
-    carrito.reduce((total, libro) => total + libro.precio * libro.cantidad, 0);
+    booksInfo.reduce((total, book) => total + book.price * book.count, 0);
 
   const subtotal = calcularSubtotal();
   const totalPay = (subtotal + envio - descuento).toFixed(2);
@@ -48,12 +52,12 @@ function CheckOut({ carrito }) {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <PurchaseTable carrito={carrito}></PurchaseTable>
+            <PurchaseTable booksInfo={booksInfo}></PurchaseTable>
             <CardDescription>
               <div className="checkout-summary__totals">
                 <div className="checkout-summary__row">
                   <span>Subtotal:</span>
-                  <span id="value">${subtotal.toFixed(2)}</span>
+                  <span id="value">${subtotal}</span>
                 </div>
                 <div className="checkout-summary__row">
                   <span>Costo de envío:</span>
@@ -98,12 +102,4 @@ function CheckOut({ carrito }) {
     </div>
   );
 }
-
-// Pass the carrito array as a default prop
-export default function CheckOutWrapper() {
-  const carrito = [
-    { id: 1, titulo: "Ensayo Sobre La Ceguera", autor: "Jose Saramago", precio: 20.100, cantidad: 2 },
-    { id: 2, titulo: "La Insoportable Levedad del Ser", autor: "Milan Kundera", precio: 15.100, cantidad: 1 },
-  ];
-  return <CheckOut carrito={carrito} />;
-}
+export default CheckOut
