@@ -27,6 +27,7 @@ const BookDetail = () => {
       coverEdition: book.cover_edition_key,
       price: book.price
     })
+    setQuantity(1);
   }
 
   if (!book) return <p>Libro no encontrado</p>;
