@@ -47,6 +47,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Proyecto MEng UNIR Grupo
+- Proyecto MEng UNIR Grupo 1
 
 
