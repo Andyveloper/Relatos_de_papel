@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import '@src/styles/BookDetail.css';
 import { fakeApi } from '@src/services/fakeApi';
 import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
+import { Dialog, DialogContent, DialogTitle, DialogTrigger, DialogHeader } from  '@src/components/ui/dialog';
 
 const BookDetail = () => {
   const allBooks = fakeApi.docs;
@@ -18,7 +19,11 @@ const BookDetail = () => {
 
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
-  
+
+  const handleCart = () => {
+    setQuantity(1);
+  }
+
   const addToCart = () => {
     updateBooks('add', {
       title: book.title,
@@ -26,7 +31,6 @@ const BookDetail = () => {
       coverEdition: book.cover_edition_key,
       price: book.price
     })
-    setQuantity(1);
   }
 
   if (!book) return <p>Libro no encontrado</p>;
@@ -62,13 +66,26 @@ const BookDetail = () => {
           <span className="book-detail__quantity-value">{quantity}</span>
           <button className="book-detail__quantity-button" onClick={increment}>+</button>
         </div>
-
-        <button
-          onClick={addToCart}
-          className="book-detail__add-to-cart"
+        <Dialog className="checkout-summary__dialog"
+          onOpenChange={(open) => {
+            if (!open) handleCart();
+          }}
         >
-          Añadir al carrito
-        </button>
+          <DialogTrigger asChild>
+            <button
+              onClick={addToCart}
+              className="book-detail__add-to-cart"
+            >
+              Añadir al carrito
+            </button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <span id="check" className="material-symbols-outlined" >check_circle</span>
+              <DialogTitle className="checkout-summary__dialog">Libro agregado con exito</DialogTitle>
+            </DialogHeader>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
