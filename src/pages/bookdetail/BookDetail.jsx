@@ -5,9 +5,7 @@ import { fakeApi } from '@src/services/fakeApi';
 import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
 
 const BookDetail = () => {
-
-  const allBooks = fakeApi.docs
-
+  const allBooks = fakeApi.docs;
   const { id } = useParams();
   const [book, setBook] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -20,6 +18,7 @@ const BookDetail = () => {
 
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+  
   const addToCart = () => {
     updateBooks('add', {
       title: book.title,
@@ -33,37 +32,46 @@ const BookDetail = () => {
   if (!book) return <p>Libro no encontrado</p>;
 
   return (
-    <div className="book-detail-container">
-      <div className="image-section">
+    <div className="book-detail">
+      <div>
         <img
           src={`https://covers.openlibrary.org/b/olid/${book.cover_edition_key}-L.jpg`}
           alt={book.title}
-          className="py-3 "
+          className="book-detail__image"
         />
       </div>
-      <div className="info-section">
-        <h3 className="genre">Disponible en:
-          <span>{' '}{book.language.join(', ').toUpperCase()}.</span>
+
+      <div className="book-detail__info">
+        <h3 className="book-detail__genre">
+          Disponible en: <span>{book.language.join(', ').toUpperCase()}.</span>
         </h3>
-        <h1>{book.title.toUpperCase()}</h1>
-        <p className="author"><em>Autor: {book.author_name}</em></p>
-        <p className="release"><em>Fecha de lanzamiento: {book.first_publish_year}</em></p>
-        <p className="description">{book.description}</p>
 
-        <div className="price">
-          <strong>${book.price} </strong>
+        <h1 className="book-detail__title">{book.title.toUpperCase()}</h1>
+
+        <p className="book-detail__author"><em>Autor: {book.author_name}</em></p>
+        <p className="book-detail__release"><em>Fecha de lanzamiento: {book.first_publish_year}</em></p>
+
+        <p className="book-detail__description">{book.description}</p>
+
+        <div className="book-detail__price">
+          <strong>${book.price.toLocaleString('es-CO', { minimumFractionDigits: 2 })}</strong>
         </div>
 
-        <div className="quantity-selector">
-          <button onClick={decrement}>-</button>
-          <span>{quantity}</span>
-          <button onClick={increment}>+</button>
+        <div className="book-detail__quantity">
+          <button className="book-detail__quantity-button" onClick={decrement}>-</button>
+          <span className="book-detail__quantity-value">{quantity}</span>
+          <button className="book-detail__quantity-button" onClick={increment}>+</button>
         </div>
 
-        <button onClick={() => { addToCart() }} className="add-to-cart">Añadir al carrito</button>
+        <button
+          onClick={addToCart}
+          className="book-detail__add-to-cart"
+        >
+          Añadir al carrito
+        </button>
       </div>
     </div>
   );
-}
+};
 
-export default BookDetail
+export default BookDetail;

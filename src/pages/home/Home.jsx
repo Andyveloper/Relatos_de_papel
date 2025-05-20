@@ -55,7 +55,7 @@ const Home = () => {
                     />
                     <p className="leading-7 [&:not(:first-child)]:mt-6">{result.appDescription}</p>
                   </CardContent>
-                  <CardFooter>
+                  <CardFooter  className={"flex justify-center"}>
                     <Button variant={'outline'} asChild title="Ir al link externo">
                       <Link rel="noopener noreferrer" to={`/book/${result.cover_i}`}>
                         Ir a detalles
