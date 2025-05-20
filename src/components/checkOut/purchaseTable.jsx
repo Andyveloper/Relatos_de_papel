@@ -1,5 +1,7 @@
-export const PurchaseTable = ({carrito}) => {
+export const PurchaseTable = ({booksInfo}) => {
+    console.log("Contenido de booksInfo:", booksInfo); // Muestra el contenido en la consola
     return (
+        
         <table className="checkout-summary__table">
             <thead>
                 <tr className="checkout-summary__table--header">
@@ -10,12 +12,12 @@ export const PurchaseTable = ({carrito}) => {
                 </tr>
             </thead>
             <tbody>
-                {carrito.map((libro) =>(
-                    <tr key={libro.id}>
-                    <td>{libro.titulo}</td>
-                    <td>{libro.cantidad}</td>
-                    <td>${libro.precio.toFixed(2)}</td>
-                    <td>${libro.precio * libro.cantidad }</td>
+                {booksInfo.map((book) =>(
+                    <tr >
+                    <td>{book.title}</td>
+                    <td>{book.count}</td>
+                    <td>${book.price}</td>
+                    <td>${book.price * book.count }</td>
                     </tr>
                 ))}
             </tbody>
