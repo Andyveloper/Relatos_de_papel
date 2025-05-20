@@ -19,14 +19,14 @@ import { CartInfoContext } from '@src/contexts/cartInfoContext/cartInfoContext';
 const CheckOut= () => {
   const context = useContext(CartInfoContext);
   const {booksInfo, updateBooks} = context;
-  const envio = 5.50;
-  const descuento = 0.00; // Reservado para futuro uso
+  const envio = 5500;
+  const descuento = 0; // Reservado para futuro uso
 
   const calcularSubtotal = () =>
     booksInfo.reduce((total, book) => total + book.price * book.count, 0);
 
   const subtotal = calcularSubtotal();
-  const totalPay = (subtotal + envio - descuento).toFixed(2);
+  const totalPay = (subtotal + envio - descuento);
 
   const navigate = useNavigate();
 
@@ -61,11 +61,11 @@ const CheckOut= () => {
                 </div>
                 <div className="checkout-summary__row">
                   <span>Costo de envío:</span>
-                  <span id="value">${envio.toFixed(2)}</span>
+                  <span id="value">${envio}</span>
                 </div>
                 <div className="checkout-summary__row">
                   <span>Descuento (cupón):</span>
-                  <span id="value">-${descuento.toFixed(2)}</span>
+                  <span id="value">-${descuento}</span>
                 </div>
                 <hr />
               </div>
