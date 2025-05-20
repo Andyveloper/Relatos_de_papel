@@ -14,6 +14,10 @@
 
 - `git clone https://github.com/Andyveloper/Relatos_de_papel.git`
 
+## Install the dependencies
+
+- `pnpm install`
+
 ## Built With
 
 - React, CSS, Tailwind, JS.
