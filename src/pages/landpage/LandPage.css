@@ -1,4 +1,4 @@
-.landing-img {
+.landing__img {
   background-image: url('/ImagenLanding.jpg');
   background-size: cover;
   background-position: center;
@@ -7,19 +7,14 @@
   width: 100%;
   display: flex;
   align-items: flex-end;
-  /* Mueve el contenido hacia abajo */
   justify-content: center;
-  /* Centra el texto horizontalmente */
   padding-bottom: 20px;
-  /* Espacio desde abajo */
   color: white;
   font-size: 1rem;
-  /* Texto más pequeño */
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  /* Hace que el texto se vea mejor sobre la imagen */
 }
 
-.landing-header {
+.landing__header {
   height: 30vh;
   /* Pantalla completa */
   background-color: #03a58f;
@@ -33,12 +28,12 @@
   padding: 2rem;
 }
 
-.landing-header h1 {
+.landing__title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.landing-header p {
+.landing__description {
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
