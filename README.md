@@ -6,7 +6,7 @@
 
 - Relatos de papel
 
-## Project Website (GitHub Pages)
+## Project Website (Vercel)
 
 - https://relatos-de-papel-roan.vercel.app/
 
