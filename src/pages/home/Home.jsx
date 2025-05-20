@@ -41,7 +41,7 @@ const Home = () => {
               <li key={result.title + index} className="w-full md:w-1/3 lg:w-1/4 flex mx-4">
                 <Card className="flex flex-col justify-between flex-1">
                   <CardHeader className="text-center text-2xl">
-                    <h2 className="font-bold bg-gradient-to-r bg-clip-text text-transparent from-purple-700 via-blue-500 to-cyan-400">
+                    <h2 className="font-bold bg-gradient-to-r bg-clip-text text-transparent from-[#03a58f] via-[#03a58f] to-cyan-400">
                       {result.title}
                     </h2>
                   </CardHeader>
@@ -55,7 +55,7 @@ const Home = () => {
                     />
                     <p className="leading-7 [&:not(:first-child)]:mt-6">{result.appDescription}</p>
                   </CardContent>
-                  <CardFooter  className={"flex justify-center"}>
+                  <CardFooter className={"flex justify-center"}>
                     <Button variant={'outline'} asChild title="Ir al link externo">
                       <Link rel="noopener noreferrer" to={`/book/${result.cover_i}`}>
                         Ir a detalles
